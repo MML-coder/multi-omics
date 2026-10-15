@@ -1,0 +1,4 @@
+member_id,tube_id,assay_name,measurement,units,collection_dt
+D_001,T-503,C-REACTIVE PROTEIN,3.1,mg/l,01/27/2026
+D_003,T-504,C-REACTIVE PROTEIN,1.2,mg/L,01/27/2026
+D_004,T-505,C-REACTIVE PROTEIN,4.4,mg/L,01/27/2026

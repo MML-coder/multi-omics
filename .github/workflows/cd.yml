@@ -1,0 +1,57 @@
+# CD: runs when main changes (i.e. after a reviewed pull request is merged).
+# 1. Package the code and a versioned config bundle (always runs).
+# 2. Deploy the config bundle to AWS (runs only once AWS is configured; skipped otherwise).
+#    The pipeline reads its contracts and reference data from that versioned location, so a merged
+#    ignored_columns / forbidden_columns / new-contract decision takes effect on the next run.
+name: cd
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # for AWS OIDC (no long-lived AWS keys in GitHub)
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    outputs:
+      config_version: ${{ steps.version.outputs.config_version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the package
+        run: pip install build && python -m build
+      - name: Version the config bundle by git commit
+        id: version
+        run: echo "config_version=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Bundle config
+        run: tar -czf "config-${{ steps.version.outputs.config_version }}.tar.gz" config
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ steps.version.outputs.config_version }}
+          path: |
+            dist/*
+            config-*.tar.gz
+
+  deploy-aws:
+    needs: package
+    runs-on: ubuntu-latest
+    # Skipped until the repository variables AWS_DEPLOY_ROLE_ARN and CONFIG_BUCKET are set.
+    if: ${{ vars.AWS_DEPLOY_ROLE_ARN != '' && vars.CONFIG_BUCKET != '' }}
+    environment: production   # add required reviewers in GitHub to gate production deploys
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
+      - name: Publish versioned config, then point "current" at it
+        run: |
+          version="${{ needs.package.outputs.config_version }}"
+          aws s3 sync config "s3://${{ vars.CONFIG_BUCKET }}/config/${version}/" --delete
+          echo "${version}" | aws s3 cp - "s3://${{ vars.CONFIG_BUCKET }}/config/CURRENT"

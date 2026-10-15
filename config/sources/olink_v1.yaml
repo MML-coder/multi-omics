@@ -1,0 +1,27 @@
+# Proteomics NPX output (brief sample layout).
+source: olink
+contract_version: 1
+domain: scientific
+format: csv
+layout: long
+sample_namespace: study_biobank
+
+fields:
+  source_sample_id: SampleID
+  source_analyte_name: AssayTarget
+  source_analyte_code: UniProtID
+  source_value: NPX_Value
+  qc_flag: QC_Flag
+  assay_run_date: {column: RunDate, type: date, format: "%Y-%m-%d"}
+
+# Values not present as columns.
+constants:
+  source_unit: NPX
+
+# No person ID and no collection date in the file: both come from the sample link (assumptions A2, A5).
+observed_at_from: sample_link
+
+natural_key: [source_sample_id, source_analyte_code]
+
+# Calibration / control samples are not people: rows whose sample ID matches are filtered (X001).
+control_sample_pattern: "^CTRL"

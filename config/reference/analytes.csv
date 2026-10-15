@@ -1,0 +1,5 @@
+analyte_code,name,uniprot_id
+HEART_RATE,Heart rate,
+SYSTOLIC_BP,Systolic blood pressure,
+CRP,C-reactive protein,P02741
+TNF,Tumor necrosis factor,P01375

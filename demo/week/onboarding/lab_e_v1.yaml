@@ -1,0 +1,17 @@
+# Lab E: onboarded on day 7 — a new vendor added with configuration only.
+source: lab_e
+contract_version: 1
+domain: scientific
+format: csv
+layout: long
+sample_namespace: lab_e
+
+fields:
+  source_subject_id: subject_code
+  source_sample_id: sample_code
+  source_analyte_code: analyte
+  source_value: value
+  source_unit: unit
+  observed_at: {column: sample_date, type: date, format: "%Y-%m-%d"}
+
+natural_key: [source_sample_id, source_analyte_code]

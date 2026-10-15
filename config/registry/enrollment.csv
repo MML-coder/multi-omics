@@ -1,0 +1,7 @@
+study_subject_id,source,source_subject_id
+G-0001,ehr_vitals,P001
+G-0001,lab_a,P001
+G-0001,lab_b,P001
+G-0002,ehr_vitals,P002
+G-0002,lab_a,P002
+G-0003,lab_b,P003

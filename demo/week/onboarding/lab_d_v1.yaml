@@ -1,0 +1,17 @@
+# Lab D: US-style dates (month/day/year) and its own test name.
+source: lab_d
+contract_version: 1
+domain: scientific
+format: csv
+layout: long
+sample_namespace: lab_d
+
+fields:
+  source_subject_id: member_id
+  source_sample_id: tube_id
+  source_analyte_code: assay_name
+  source_value: measurement
+  source_unit: units
+  observed_at: {column: collection_dt, type: date, format: "%m/%d/%Y"}
+
+natural_key: [source_sample_id, source_analyte_code]

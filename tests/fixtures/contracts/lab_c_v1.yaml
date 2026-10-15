@@ -1,0 +1,17 @@
+# Lab C: its own column names; reports CRP in mg/dL (10x smaller numbers than mg/L).
+source: lab_c
+contract_version: 1
+domain: scientific
+format: csv
+layout: long
+sample_namespace: lab_c
+
+fields:
+  source_subject_id: patient_ref
+  source_sample_id: specimen_no
+  source_analyte_code: test
+  source_value: result_value
+  source_unit: result_unit
+  observed_at: {column: drawn_on, type: date, format: "%Y-%m-%d"}
+
+natural_key: [source_sample_id, source_analyte_code]

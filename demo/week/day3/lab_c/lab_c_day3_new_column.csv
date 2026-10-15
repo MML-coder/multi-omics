@@ -1,0 +1,2 @@
+patient_ref,specimen_no,test,result_value,result_unit,drawn_on,specimen_type
+C-1001,C79,CRP_SERUM,0.29,mg/dL,2026-01-26,serum

@@ -1,0 +1,3 @@
+patient_id,encounter_id,vital_type,value,unit,recorded_at
+P001,E300,HR,72,bpm,2026-01-10 09:30
+P002,E301,SYS_BP,120,mmHg,2026-01-11 10:15

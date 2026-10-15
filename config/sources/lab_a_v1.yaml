@@ -1,0 +1,19 @@
+# Lab A clinical lab results (brief sample layout).
+source: lab_a
+contract_version: 1
+domain: scientific
+format: csv
+layout: long
+sample_namespace: study_biobank
+
+# canonical field: source column name, or {column, type, format, required, default}
+fields:
+  source_subject_id: participant_id
+  source_sample_id: sample_id
+  source_analyte_code: analyte
+  source_value: value
+  source_unit: unit
+  observed_at: {column: collected_at, type: date, format: "%Y-%m-%d"}
+  result_status: {column: result_status, required: false, default: F}
+
+natural_key: [source_sample_id, source_analyte_code]

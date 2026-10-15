@@ -1,0 +1,3 @@
+participant_id,sample_id,analyte,value,unit,collected_at
+P001,S100,CRP,3.2,mg/L,2026-01-10
+P002,S101,CRP,1.7,mg/L,2026-01-11

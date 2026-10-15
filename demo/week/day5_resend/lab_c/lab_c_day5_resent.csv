@@ -1,0 +1,2 @@
+patient_ref,specimen_no,test,result_value,result_unit,drawn_on
+C-1002,C80,CRP_SERUM,0.21,mg/dL,2026-02-05

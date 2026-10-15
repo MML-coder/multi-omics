@@ -1,0 +1,19 @@
+# Lab B layout v2: identifier columns renamed, result status added. Added during the
+# schema-evolution demo: copy into config/sources/ and release the quarantined file.
+source: lab_b
+contract_version: 2
+domain: scientific
+format: csv
+layout: long
+sample_namespace: lab_b
+
+fields:
+  source_subject_id: subject_id
+  source_sample_id: specimen_id
+  source_analyte_code: test_code
+  source_value: result
+  source_unit: unit
+  observed_at: {column: collection_date, type: date, format: "%Y-%m-%d"}
+  result_status: {column: result_status, required: false, default: F}
+
+natural_key: [source_sample_id, source_analyte_code]

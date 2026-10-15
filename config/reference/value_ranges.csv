@@ -1,0 +1,4 @@
+analyte_code,unit,hard_min,hard_max,soft_min,soft_max
+HEART_RATE,bpm,0,400,30,200
+SYSTOLIC_BP,mmHg,0,400,70,250
+CRP,mg/L,0,1000,0,300

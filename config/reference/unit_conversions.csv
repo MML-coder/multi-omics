@@ -1,0 +1,7 @@
+from_unit,to_unit,factor
+bpm,bpm,1
+mmHg,mmHg,1
+mg/L,mg/L,1
+ug/L,mg/L,0.001
+mg/dL,mg/L,10
+NPX,NPX,1

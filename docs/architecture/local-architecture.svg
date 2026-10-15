@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -60 1700 987.5" width="1700" height="987.5" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="head0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#495057"/></marker>
+</defs>
+<rect x="20" y="-60" width="1700" height="987.5" fill="#ffffff"/>
+<text font-size="28" fill="#1e1e1e" text-anchor="start"><tspan x="40" y="-13.400000000000002">Local prototype — as built</tspan></text>
+<text font-size="14" fill="#495057" text-anchor="start"><tspan x="40" y="13.299999999999999">One Python process, one DuckDB file. Solid = data · dashed = configuration and events.</tspan></text>
+<rect x="340" y="40" width="1000" height="120" rx="8" fill="#fff9db" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="352" y="65.1">config/  (versioned in git — every change is a pull request)</tspan></text>
+<rect x="360" y="75" width="250" height="65" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="485.0" y="103.3">sources/*.yaml</tspan><tspan x="485.0" y="120.80000000000001">contract per vendor + version</tspan></text>
+<rect x="640" y="70" width="260" height="75" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="770.0" y="95.475">reference/*.csv</tspan><tspan x="770.0" y="111.725">analytes · aliases · units ·</tspan><tspan x="770.0" y="127.975">unit aliases · value ranges</tspan></text>
+<rect x="930" y="75" width="250" height="65" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1055.0" y="103.3">registry/enrollment.csv</tspan><tspan x="1055.0" y="120.80000000000001">vendor ID → person 🔒</tspan></text>
+<rect x="40" y="190" width="260" height="530" rx="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="215.1">Inputs</tspan></text>
+<rect x="55" y="230" width="230" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="170.0" y="260.8">Vendor files</tspan><tspan x="170.0" y="278.3">(demo/week, tests/fixtures)</tspan></text>
+<rect x="55" y="380" width="230" height="80" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="170.0" y="415.5">data/landing/&lt;source&gt;/</tspan><tspan x="170.0" y="434.25">(the inbox)</tspan></text>
+<rect x="55" y="560" width="230" height="80" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="170.0" y="587.975">pipeline generate · deliver</tspan><tspan x="170.0" y="604.225">(seeded synthetic data +</tspan><tspan x="170.0" y="620.475">ground truth)</tspan></text>
+<rect x="340" y="190" width="560" height="530" rx="8" fill="#fff4e6" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="352" y="215.1">pipeline run — ingest.py: one transaction per file</tspan></text>
+<rect x="370" y="230" width="280" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="510.0" y="255.8">1  register file</tspan><tspan x="510.0" y="273.3">(SHA-256: duplicate? skip)</tspan></text>
+<rect x="370" y="310" width="280" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="510.0" y="335.8">2  contract check</tspan><tspan x="510.0" y="353.3">(no match → quarantine F001–F007)</tspan></text>
+<rect x="370" y="390" width="280" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="510.0" y="415.8">3  adapters.py</tspan><tspan x="510.0" y="433.3">read CSV/TSV · map columns</tspan></text>
+<rect x="370" y="470" width="280" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="510.0" y="495.8">4  rules.py</tspan><tspan x="510.0" y="513.3">validate in SQL → DLQ (R001–R011)</tspan></text>
+<rect x="370" y="550" width="280" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="510.0" y="575.8">5  transform.py</tspan><tspan x="510.0" y="593.3">units · analytes · identity · version</tspan></text>
+<rect x="370" y="630" width="280" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="510.0" y="655.8">6  commit: silver + DLQ +</tspan><tspan x="510.0" y="673.3">sample links + file status</tspan></text>
+<rect x="680" y="390" width="200" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="780.0" y="416.1">drift.py · notify.py</tspan><tspan x="780.0" y="432.35">schema drift · events</tspan></text>
+<rect x="680" y="550" width="200" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="780.0" y="576.1">end of run:</tspan><tspan x="780.0" y="592.35">re-resolve held rows</tspan></text>
+<rect x="680" y="630" width="200" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="780.0" y="656.1">end of run:</tspan><tspan x="780.0" y="672.35">gold.py rebuild</tspan></text>
+<rect x="940" y="190" width="400" height="530" rx="8" fill="#ebfbee" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="952" y="215.1">Storage (data/)</tspan></text>
+<rect x="960" y="230" width="360" height="60" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1140.0" y="255.8">bronze/source=…/</tspan><tspan x="1140.0" y="273.3">original file + sidecar (never changed)</tspan></text>
+<rect x="960" y="310" width="360" height="60" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1140.0" y="335.8">quarantine/</tspan><tspan x="1140.0" y="353.3">rejected files + reason.json</tspan></text>
+<rect x="955" y="395" width="370" height="315" rx="8" fill="#ffffff" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="967" y="420.1">warehouse.duckdb  (one file, one writer)</tspan></text>
+<rect x="970" y="430" width="340" height="45" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1140.0" y="456.725">ref — snapshot of config for this run</tspan></text>
+<rect x="970" y="490" width="340" height="60" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1140.0" y="515.8">silver.measurement</tspan><tspan x="1140.0" y="533.3">every version + lineage</tspan></text>
+<rect x="970" y="565" width="340" height="60" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1140.0" y="591.1">gold.measurement_current</tspan><tspan x="1140.0" y="607.35">+ dim_subject · dim_sample · dim_analyte</tspan></text>
+<rect x="970" y="640" width="340" height="60" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1140.0" y="666.1">meta — files · runs · stage timings ·</tspan><tspan x="1140.0" y="682.35">DLQ · events · drift · sample links</tspan></text>
+<rect x="1380" y="190" width="320" height="530" rx="8" fill="#f3f0ff" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="1392" y="215.1">Ways in</tspan></text>
+<rect x="1400" y="240" width="280" height="85" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1540.0" y="269.55">FastAPI — pipeline serve</tspan><tspan x="1540.0" y="287.05">/measurements · /lineage ·</tspan><tspan x="1540.0" y="304.55">/runs · /health (read-only)</tspan></text>
+<rect x="1400" y="390" width="280" height="65" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1540.0" y="418.3">Streamlit dashboard</tspan><tspan x="1540.0" y="435.8">app/dashboard.py</tspan></text>
+<rect x="1400" y="520" width="280" height="100" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1540.0" y="548.3">CLI operations</tspan><tspan x="1540.0" y="565.8">status · events · drift · dlq ·</tspan><tspan x="1540.0" y="583.3">quarantine · replay · lineage ·</tspan><tspan x="1540.0" y="600.8">check-file</tspan></text>
+<rect x="40" y="760" width="1660" height="130" rx="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="785.1">How we know it works</tspan></text>
+<rect x="60" y="795" width="255" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="187.5" y="834.55">86 pytest tests</tspan></text>
+<rect x="335" y="795" width="255" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="462.5" y="825.8">demo/run_demo.py</tspan><tspan x="462.5" y="843.3">15 checked steps</tspan></text>
+<rect x="610" y="795" width="255" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="737.5" y="825.8">demo/run_week_demo.py</tspan><tspan x="737.5" y="843.3">5 labs + proteomics, 13 steps</tspan></text>
+<rect x="885" y="795" width="255" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1012.5" y="825.8">pipeline verify</tspan><tspan x="1012.5" y="843.3">vs ground truth</tspan></text>
+<rect x="1160" y="795" width="255" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1287.5" y="825.8">benchmark/</tspan><tspan x="1287.5" y="843.3">time per stage</tspan></text>
+<rect x="1435" y="795" width="255" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1562.5" y="825.8">GitHub Actions CI</tspan><tspan x="1562.5" y="843.3">tests · contracts · demos</tspan></text>
+<polyline points="170.0,300 170.0,380" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="170.0,560 170.0,460" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="285,420.0 335,420.0 335,260.0 370,260.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="510.0,290 510.0,310" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="510.0,370 510.0,390" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="510.0,450 510.0,470" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="510.0,530 510.0,550" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="510.0,610 510.0,630" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="650,325 960,260.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="650,352 960,340.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="510.0,690 510.0,712 930.0,712 930.0,520 970.0,520.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="880,580.0 970,520.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="880,660.0 970,595.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1310,595.0 1400,282.5" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1310,595.0 1400,422.5" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1310,670.0 1400,570.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="360,107.5 352,107.0 352,340.0 370,340.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="300" y="161.4">contract</tspan></text>
+<polyline points="1180,107.5 1358,107.0 1358,452.0 1310,452.5" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="1190" y="96.4">loaded each run</tspan></text>
+<polyline points="770.0,145 770.0,175 665.0,175 665.0,500 650.0,500.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="672" y="466.4">rules use it</tspan></text>
+<polyline points="880,420.0 910,420.0 910,670.0 970,670.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="912" y="611.4">events</tspan></text>
+</svg>

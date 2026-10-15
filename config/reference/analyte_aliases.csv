@@ -1,0 +1,7 @@
+source,source_code,analyte_code,assay,measurement_scale,canonical_unit
+ehr_vitals,HR,HEART_RATE,vital_sign,absolute,bpm
+ehr_vitals,SYS_BP,SYSTOLIC_BP,vital_sign,absolute,mmHg
+lab_a,CRP,CRP,standard,absolute,mg/L
+lab_b,HSCRP,CRP,high_sensitivity,absolute,mg/L
+olink,P02741,CRP,olink_npx,relative_log2,NPX
+olink,P01375,TNF,olink_npx,relative_log2,NPX

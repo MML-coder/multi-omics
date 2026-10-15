@@ -1,0 +1,3 @@
+subject_id,specimen_id,test_code,result,unit,collection_date,result_status
+P001,S210,HSCRP,2900,ug/L,2026-02-01,F
+P003,S211,HSCRP,2300,ug/L,2026-02-01,F

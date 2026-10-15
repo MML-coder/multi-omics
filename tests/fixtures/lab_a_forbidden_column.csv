@@ -1,0 +1,2 @@
+participant_id,sample_id,analyte,value,unit,collected_at,patient_name
+P001,S106,CRP,2.2,mg/L,2026-02-14,Jane Doe

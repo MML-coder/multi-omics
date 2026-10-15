@@ -1,0 +1,20 @@
+# EHR vital signs (brief sample layout).
+source: ehr_vitals
+contract_version: 1
+domain: operational
+format: csv
+layout: long
+sample_namespace: null
+
+# Timestamps carry no timezone; interpreted in this zone and stored as UTC (assumption A4).
+timezone: America/New_York
+
+fields:
+  source_subject_id: patient_id
+  source_encounter_id: encounter_id
+  source_analyte_code: vital_type
+  source_value: value
+  source_unit: unit
+  observed_at: {column: recorded_at, type: datetime, format: "%Y-%m-%d %H:%M"}
+
+natural_key: [source_subject_id, source_encounter_id, source_analyte_code, observed_at]

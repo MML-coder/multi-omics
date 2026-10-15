@@ -1,0 +1,62 @@
+# CI: runs on every pull request and every push to main.
+# A contract change (e.g. ignored_columns, forbidden_columns, a new contract version) is a pull request,
+# so it is tested here before it can reach the pipeline.
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Unit, scenario and ground-truth tests
+        run: pytest -q
+
+  contracts:
+    # Fast, focused feedback for config pull requests: every contract parses, reference data is
+    # consistent, and each sample file still ingests cleanly under the current contracts.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Contracts and reference data are consistent
+        run: pytest -q tests/test_config_consistency.py
+      - name: Sample files ingest cleanly under the current contracts
+        run: |
+          for source in ehr_vitals lab_a lab_b olink; do
+            pipeline check-file --source "$source" "tests/fixtures/${source}_sample.csv"
+          done
+
+  demo:
+    # The onsite demo doubles as an end-to-end acceptance test: 15 steps, each checked.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Run the demo end to end
+        run: python demo/run_demo.py
+      - name: Run the week demo (5 labs + proteomics) end to end
+        run: python demo/run_week_demo.py

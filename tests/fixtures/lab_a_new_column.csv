@@ -1,0 +1,3 @@
+participant_id,sample_id,analyte,value,unit,collected_at,specimen_type
+P001,S102,CRP,2.8,mg/L,2026-02-10,serum
+P002,S103,CRP,1.9,mg/L,2026-02-11,plasma

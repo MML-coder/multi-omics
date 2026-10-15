@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -60 3085.0 1750" width="3085.0" height="1750" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="head0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#495057"/></marker>
+<marker id="head1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e03131"/></marker>
+</defs>
+<rect x="20" y="-60" width="3085.0" height="1750" fill="#ffffff"/>
+<text font-size="28" fill="#1e1e1e" text-anchor="start"><tspan x="40" y="-13.400000000000002">Multi-source measurement platform — AWS production architecture</tspan></text>
+<text font-size="14" fill="#495057" text-anchor="start"><tspan x="40" y="13.299999999999999">Solid arrows = data · dashed arrows = control, config and events · human decisions marked 👤</tspan></text>
+<rect x="40" y="40" width="1840" height="100" rx="8" fill="#fff5f5" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="65.1">Security &amp; compliance (all layers)</tspan></text>
+<rect x="60" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="165.0" y="98.6">KMS keys per</tspan><tspan x="165.0" y="114.85">data class</tspan></text>
+<rect x="288" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="393.0" y="98.6">IAM least privilege</tspan><tspan x="393.0" y="114.85">(role per component)</tspan></text>
+<rect x="516" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="621.0" y="98.6">VPC + endpoints</tspan><tspan x="621.0" y="114.85">(no internet path)</tspan></text>
+<rect x="744" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="849.0" y="98.6">Lake Formation</tspan><tspan x="849.0" y="114.85">row / column access</tspan></text>
+<rect x="972" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1077.0" y="98.6">Macie</tspan><tspan x="1077.0" y="114.85">(PII in landing/quarantine)</tspan></text>
+<rect x="1200" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1305.0" y="98.6">CloudTrail + S3</tspan><tspan x="1305.0" y="114.85">access logs (audit)</tspan></text>
+<rect x="1428" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1533.0" y="106.725">Secrets Manager</tspan></text>
+<rect x="1656" y="75" width="210" height="55" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1761.0" y="98.6">HIPAA-eligible</tspan><tspan x="1761.0" y="114.85">services + BAA</tspan></text>
+<rect x="40" y="170" width="230" height="590" rx="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="195.1">Vendors</tspan></text>
+<rect x="300" y="170" width="270" height="590" rx="8" fill="#e7f5ff" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="312" y="195.1">Ingestion</tspan></text>
+<rect x="600" y="170" width="300" height="590" rx="8" fill="#fff4e6" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="612" y="195.1">Processing</tspan></text>
+<rect x="930" y="170" width="300" height="590" rx="8" fill="#ebfbee" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="942" y="195.1">Lakehouse storage (S3)</tspan></text>
+<rect x="1260" y="170" width="300" height="590" rx="8" fill="#f3f0ff" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="1272" y="195.1">Unified access layer</tspan></text>
+<rect x="1590" y="170" width="290" height="590" rx="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="1602" y="195.1">Consumers</tspan></text>
+<rect x="60" y="220" width="190" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="155.0" y="259.875">EHR vitals (CSV)</tspan></text>
+<rect x="60" y="320" width="190" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="155.0" y="359.875">Lab A (CSV)</tspan></text>
+<rect x="60" y="420" width="190" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="155.0" y="459.875">Lab B (CSV)</tspan></text>
+<rect x="60" y="520" width="190" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="155.0" y="550.5">Proteomics / Olink</tspan><tspan x="155.0" y="569.25">(CSV, large batches)</tspan></text>
+<rect x="320" y="220" width="230" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="435.0" y="250.5">AWS Transfer Family</tspan><tspan x="435.0" y="269.25">(SFTP, per-vendor user)</tspan></text>
+<rect x="320" y="330" width="230" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="435.0" y="360.5">S3 landing/&lt;source&gt;/</tspan><tspan x="435.0" y="379.25">(per-vendor IAM role)</tspan></text>
+<rect x="320" y="440" width="230" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="435.0" y="470.5">EventBridge</tspan><tspan x="435.0" y="489.25">(object created)</tspan></text>
+<rect x="320" y="550" width="230" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="435.0" y="580.5">SQS FIFO</tspan><tspan x="435.0" y="599.25">(message group = source)</tspan></text>
+<rect x="320" y="660" width="230" height="60" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="435.0" y="686.1">SQS dead-letter queue</tspan><tspan x="435.0" y="702.35">(processing failures)</tspan></text>
+<rect x="650" y="230" width="230" height="150" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="765.0" y="274.55">ECS Fargate worker</tspan><tspan x="765.0" y="292.05">(pipeline container)</tspan><tspan x="765.0" y="309.55">contract check · bronze copy ·</tspan><tspan x="765.0" y="327.05">validate · normalize ·</tspan><tspan x="765.0" y="344.55">resolve identity · version</tspan></text>
+<rect x="650" y="430" width="230" height="70" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="765.0" y="460.8">EMR Serverless / Glue Spark</tspan><tspan x="765.0" y="478.3">(back-fills, large rebuilds)</tspan></text>
+<rect x="650" y="540" width="230" height="70" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="765.0" y="570.8">Glue Data Quality (DQDL)</tspan><tspan x="765.0" y="588.3">(same rule files, at scale)</tspan></text>
+<rect x="650" y="650" width="230" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="765.0" y="675.8">Gold rebuild</tspan><tspan x="765.0" y="693.3">(incremental by partition)</tspan></text>
+<rect x="950" y="220" width="260" height="80" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1080.0" y="246.125">S3 bronze</tspan><tspan x="1080.0" y="264.875">(versioned + Object Lock:</tspan><tspan x="1080.0" y="283.625">immutable raw files)</tspan></text>
+<rect x="950" y="325" width="260" height="70" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1080.0" y="355.5">S3 quarantine + DLQ rows</tspan><tspan x="1080.0" y="374.25">(restricted · Macie-scanned)</tspan></text>
+<rect x="950" y="420" width="260" height="80" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1080.0" y="447.05">Iceberg silver on S3</tspan><tspan x="1080.0" y="464.55">(Parquet files · every version</tspan><tspan x="1080.0" y="482.05">+ lineage)</tspan></text>
+<rect x="950" y="525" width="260" height="80" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1080.0" y="552.05">Iceberg gold on S3</tspan><tspan x="1080.0" y="569.55">(Parquet files · current values</tspan><tspan x="1080.0" y="587.05">+ dimensions)</tspan></text>
+<rect x="950" y="640" width="260" height="60" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1080.0" y="665.8">Glue Data Catalog</tspan><tspan x="1080.0" y="683.3">(Iceberg table pointers + schemas)</tspan></text>
+<rect x="1280" y="220" width="260" height="70" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1410.0" y="250.5">Athena + Lake Formation</tspan><tspan x="1410.0" y="269.25">(analyst SQL)</tspan></text>
+<rect x="1280" y="325" width="260" height="80" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1410.0" y="352.05">Postgres read model</tspan><tspan x="1410.0" y="369.55">(small COPY of gold,</tspan><tspan x="1410.0" y="387.05">for fast app lookups)</tspan></text>
+<rect x="1280" y="440" width="260" height="70" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1410.0" y="470.5">API Gateway → ECS API</tspan><tspan x="1410.0" y="489.25">(measurements · lineage)</tspan></text>
+<rect x="1280" y="550" width="260" height="80" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1410.0" y="576.125">Athena UNLOAD → S3</tspan><tspan x="1410.0" y="594.875">(async bulk export,</tspan><tspan x="1410.0" y="613.625">pre-signed URL)</tspan></text>
+<rect x="1610" y="220" width="250" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1735.0" y="259.875">Analysts / scientists</tspan></text>
+<rect x="1610" y="440" width="250" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1735.0" y="479.875">Apps / dashboards</tspan></text>
+<rect x="1610" y="560" width="250" height="70" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="15" fill="#1e1e1e" text-anchor="middle"><tspan x="1735.0" y="599.875">ML (SageMaker)</tspan></text>
+<rect x="40" y="795" width="1840" height="330" rx="8" fill="#fff9db" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="820.1">Control plane &amp; operations</tspan></text>
+<rect x="60" y="830" width="260" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="190.0" y="857.975">RDS Postgres — METADATA ONLY</tspan><tspan x="190.0" y="874.225">(runs · files · DLQ · drift ·</tspan><tspan x="190.0" y="890.475">sample links · registry 🔒)</tspan></text>
+<rect x="350" y="830" width="250" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="475.0" y="866.1">EventBridge bus</tspan><tspan x="475.0" y="882.35">(F004 · F006 · F007 · B001 · P001)</tspan></text>
+<rect x="630" y="830" width="230" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="745.0" y="866.1">SNS → Slack / PagerDuty</tspan><tspan x="745.0" y="882.35">(by severity + owner)</tspan></text>
+<rect x="890" y="830" width="230" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1005.0" y="857.975">Lambda → GitHub issue</tspan><tspan x="1005.0" y="874.225">👤 owner decides:</tspan><tspan x="1005.0" y="890.475">adopt / ignore / forbid</tspan></text>
+<rect x="1150" y="830" width="270" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1285.0" y="857.975">Step Functions back-fill</tspan><tspan x="1285.0" y="874.225">PLAN → 👤 approve →</tspan><tspan x="1285.0" y="890.475">EXECUTE → VERIFY</tspan></text>
+<rect x="1450" y="830" width="220" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1560.0" y="866.1">CloudWatch</tspan><tspan x="1560.0" y="882.35">(stage timings, alarms)</tspan></text>
+<rect x="1690" y="830" width="180" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1780.0" y="866.1">EventBridge Scheduler</tspan><tspan x="1780.0" y="882.35">(freshness check)</tspan></text>
+<rect x="60" y="970" width="220" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="170.0" y="1000.8">GitHub repo</tspan><tspan x="170.0" y="1018.3">(contracts · ADRs · code)</tspan></text>
+<rect x="310" y="970" width="220" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="420.0" y="1000.8">GitHub Actions CI</tspan><tspan x="420.0" y="1018.3">(tests · check-file · demo)</tspan></text>
+<rect x="560" y="970" width="230" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="675.0" y="1000.8">GitHub Actions CD</tspan><tspan x="675.0" y="1018.3">(OIDC → AWS, 👤 approval)</tspan></text>
+<rect x="820" y="970" width="170" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="905.0" y="1000.8">ECR</tspan><tspan x="905.0" y="1018.3">(pipeline image)</tspan></text>
+<rect x="1020" y="970" width="220" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1130.0" y="1000.8">Terraform</tspan><tspan x="1130.0" y="1018.3">(one module per source)</tspan></text>
+<rect x="1270" y="965" width="220" height="80" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1380.0" y="992.05">S3 config bucket</tspan><tspan x="1380.0" y="1009.55">(versioned contracts,</tspan><tspan x="1380.0" y="1027.05">reference data)</tspan></text>
+<polyline points="250,255.0 320,255.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="250,355.0 320,365.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="250,455.0 320,365.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="250,555.0 320,365.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="435.0,290 435.0,330" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="435.0,400 435.0,440" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="435.0,510 435.0,550" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="550,585.0 585,585.0 585,330.0 650,330.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="880,255 950,260.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="880,300 950,360.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="880,345 950,460.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1080.0,500 1080.0,525" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="880,448 950,470" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1210,565.0 1280,255.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1210,565.0 1280,365.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1210,565.0 1280,590.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1410.0,405 1410.0,440" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1540,255.0 1610,255.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1540,475.0 1610,475.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="1540,590.0 1610,595.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head0)"/>
+<polyline points="435.0,620 435.0,660" fill="none" stroke="#e03131" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head1)"/>
+<polyline points="765.0,540 765.0,500" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="880,680.0 950,565.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="600,870.0 630,870.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="860,870.0 890,870.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="280,1005.0 310,1005.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="530,1005.0 560,1005.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="790,1005.0 820,1005.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="795" y="1056.4">push image</tspan></text>
+<polyline points="765.0,380 765.0,405 905.0,405 905.0,782 190.0,782 190.0,830" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="930" y="776.4">writes runs, DLQ, drift, links · emits events · metrics</tspan></text>
+<polyline points="765.0,380 765.0,405 905.0,405 905.0,782 475.0,782 475.0,830" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="765.0,380 765.0,405 905.0,405 905.0,782 1560.0,782 1560.0,830" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="1780.0,910 1780.0,935 475.0,935 475.0,910" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="675.0,1040 675.0,1075 1130.0,1075 1130.0,1040" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="900" y="1089.4">apply infra</tspan></text>
+<polyline points="675.0,1040 675.0,1075 1380.0,1075 1380.0,1045" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="1250" y="1089.4">publish config</tspan></text>
+<polyline points="1380.0,965 1380.0,945 615.0,945 615.0,260 650.0,260" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="560" y="251.4">config</tspan></text>
+<polyline points="1285.0,830 1285.0,812 924.0,812 924.0,482 880.0,482" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="1040" y="806.4">back-fill jobs</tspan></text>
+</svg>
