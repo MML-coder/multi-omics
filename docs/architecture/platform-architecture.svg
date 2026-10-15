@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -70 1720 1060" width="1720" height="1060" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="head0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0c8599"/></marker>
+<marker id="head1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#495057"/></marker>
+</defs>
+<rect x="20" y="-70" width="1720" height="1060" fill="#ffffff"/>
+<text font-size="28" fill="#1e1e1e" text-anchor="start"><tspan x="40" y="-23.400000000000002">Measurement platform — from vendor files to analysis</tspan></text>
+<text font-size="14" fill="#495057" text-anchor="start"><tspan x="40" y="5.299999999999999">Solid boxes = built in the prototype · dashed boxes = designed next · solid arrows = data · dashed = context</tspan></text>
+<rect x="40" y="70" width="220" height="630" rx="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="95.1">Sources</tspan></text>
+<rect x="290" y="70" width="250" height="630" rx="8" fill="#e7f5ff" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="302" y="95.1">Ingest and standardize</tspan></text>
+<rect x="570" y="70" width="270" height="630" rx="8" fill="#ebfbee" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="582" y="95.1">Data layers + biology context</tspan></text>
+<rect x="870" y="70" width="290" height="630" rx="8" fill="#fff4e6" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="882" y="95.1">Analysis (plug-in steps)</tspan></text>
+<rect x="1190" y="70" width="240" height="630" rx="8" fill="#fff0f6" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="1202" y="95.1">ML and statistics</tspan></text>
+<rect x="1460" y="70" width="260" height="630" rx="8" fill="#f3f0ff" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="1472" y="95.1">Ways in</tspan></text>
+<rect x="55" y="120" width="190" height="60" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="150.0" y="145.8">EHR vitals</tspan><tspan x="150.0" y="163.3">(operational)</tspan></text>
+<rect x="55" y="210" width="190" height="60" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="150.0" y="235.8">Clinical labs</tspan><tspan x="150.0" y="253.3">A · B · C</tspan></text>
+<rect x="55" y="300" width="190" height="60" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="150.0" y="325.8">Proteomics (Olink)</tspan><tspan x="150.0" y="343.3">sample IDs only, NPX</tspan></text>
+<rect x="55" y="390" width="190" height="60" rx="8" fill="#ffffff" stroke="#495057" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="150.0" y="415.8">New assays</tspan><tspan x="150.0" y="433.3">metabolomics, genomics …</tspan></text>
+<rect x="305" y="115" width="220" height="60" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="415.0" y="140.8">Contract per vendor</tspan><tspan x="415.0" y="158.3">config, reviewed like code</tspan></text>
+<rect x="305" y="200" width="220" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="415.0" y="222.05">Validate</tspan><tspan x="415.0" y="239.55">bad file → quarantine</tspan><tspan x="415.0" y="257.05">bad row → dead-letter queue</tspan></text>
+<rect x="305" y="295" width="220" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="415.0" y="317.05">Standardize</tspan><tspan x="415.0" y="334.55">units · analyte codes</tspan><tspan x="415.0" y="352.05">UTC · blood-draw date</tspan></text>
+<rect x="305" y="390" width="220" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="415.0" y="412.05">Identify the person</tspan><tspan x="415.0" y="429.55">registry + sample links</tspan><tspan x="415.0" y="447.05">hold, never guess</tspan></text>
+<rect x="305" y="485" width="220" height="70" rx="8" fill="#ffffff" stroke="#1971c2" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="415.0" y="507.05">Version</tspan><tspan x="415.0" y="524.55">record ID · append-only</tspan><tspan x="415.0" y="542.05">change reason</tspan></text>
+<rect x="585" y="115" width="240" height="75" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="705.0" y="139.55">Bronze</tspan><tspan x="705.0" y="157.05">raw files, unchanged</tspan><tspan x="705.0" y="174.55">rebuild everything from here</tspan></text>
+<rect x="585" y="215" width="240" height="65" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="705.0" y="243.3">Silver</tspan><tspan x="705.0" y="260.8">every version + lineage</tspan></text>
+<rect x="585" y="305" width="240" height="75" rx="8" fill="#ffffff" stroke="#2f9e44" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="705.0" y="329.55">Gold</tspan><tspan x="705.0" y="347.05">current harmonized</tspan><tspan x="705.0" y="364.55">measurements</tspan></text>
+<rect x="585" y="430" width="240" height="60" rx="8" fill="#ffffff" stroke="#0c8599" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="705.0" y="456.1">Entities</tspan><tspan x="705.0" y="472.35">subject · sample · protein (UniProt)</tspan></text>
+<rect x="585" y="510" width="240" height="75" rx="8" fill="#ffffff" stroke="#0c8599" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="705.0" y="535.475">Relationships</tspan><tspan x="705.0" y="551.725">protein → gene → pathway</tspan><tspan x="705.0" y="567.975">interactions (Reactome, GO)</tspan></text>
+<rect x="885" y="115" width="260" height="60" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1015.0" y="140.8">Freeze</tspan><tspan x="1015.0" y="158.3">named, pinned data snapshot</tspan></text>
+<rect x="885" y="200" width="260" height="100" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1015.0" y="228.3">Analysis steps</tspan><tspan x="1015.0" y="245.8">normalize · batch-correct</tspan><tspan x="1015.0" y="263.3">QC filter · impute · features</tspan><tspan x="1015.0" y="280.8">Nextflow · R · Python</tspan></text>
+<rect x="885" y="325" width="260" height="75" rx="8" fill="#ffffff" stroke="#e8590c" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1015.0" y="349.55">Step manifest</tspan><tspan x="1015.0" y="367.05">input freeze + parameters</tspan><tspan x="1015.0" y="384.55">+ code version → output hash</tspan></text>
+<rect x="1205" y="115" width="210" height="75" rx="8" fill="#ffffff" stroke="#c2255c" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1310.0" y="139.55">Feature matrices</tspan><tspan x="1310.0" y="157.05">sample × protein</tspan><tspan x="1310.0" y="174.55">(wide Parquet)</tspan></text>
+<rect x="1205" y="215" width="210" height="65" rx="8" fill="#ffffff" stroke="#c2255c" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1310.0" y="243.3">Statistical models · ML</tspan><tspan x="1310.0" y="260.8">R · Python · SageMaker</tspan></text>
+<rect x="1475" y="115" width="230" height="60" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1590.0" y="140.8">API</tspan><tspan x="1590.0" y="158.3">person lookup · lineage</tspan></text>
+<rect x="1475" y="200" width="230" height="50" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1590.0" y="229.55">Dashboard</tspan></text>
+<rect x="1475" y="275" width="230" height="60" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1590.0" y="300.8">SQL</tspan><tspan x="1590.0" y="318.3">DuckDB (local) · Athena (AWS)</tspan></text>
+<rect x="1475" y="360" width="230" height="60" rx="8" fill="#ffffff" stroke="#6741d9" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1590.0" y="385.8">Arrow / Parquet</tspan><tspan x="1590.0" y="403.3">straight into R and Python</tspan></text>
+<rect x="40" y="730" width="1680" height="120" rx="8" fill="#fff9db" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="755.1">Lineage and versioning — applies to every box above</tspan></text>
+<rect x="60" y="765" width="260" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="190.0" y="796.1">Row lineage</tspan><tspan x="190.0" y="812.35">file · row · run</tspan></text>
+<rect x="337" y="765" width="260" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="467.0" y="796.1">Code version</tspan><tspan x="467.0" y="812.35">git commit (.dirty)</tspan></text>
+<rect x="614" y="765" width="260" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="744.0" y="787.975">Config versions</tspan><tspan x="744.0" y="804.225">contracts · reference ·</tspan><tspan x="744.0" y="820.475">registry hashes</tspan></text>
+<rect x="891" y="765" width="260" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1021.0" y="796.1">As-of queries</tspan><tspan x="1021.0" y="812.35">data as it was on any date</tspan></text>
+<rect x="1168" y="765" width="260" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1298.0" y="796.1">Freezes</tspan><tspan x="1298.0" y="812.35">Iceberg tags on AWS</tspan></text>
+<rect x="1445" y="765" width="260" height="70" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="13" fill="#1e1e1e" text-anchor="middle"><tspan x="1575.0" y="796.1">Step manifests</tspan><tspan x="1575.0" y="812.35">+ OpenLineage</tspan></text>
+<rect x="40" y="875" width="1680" height="95" rx="8" fill="#f8f9fa" stroke="#868e96" stroke-width="1" stroke-dasharray="8 6"/>
+<text font-size="18" fill="#495057" text-anchor="start"><tspan x="52" y="900.1">Runs on</tspan></text>
+<rect x="60" y="905" width="800" height="50" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="460.0" y="934.55">Laptop: one DuckDB file, one process, a watcher stands in for events</tspan></text>
+<rect x="900" y="905" width="800" height="50" rx="8" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-dasharray="8 6"/>
+<text font-size="14" fill="#1e1e1e" text-anchor="middle"><tspan x="1300.0" y="934.55">AWS: S3 + Iceberg + Postgres, event-driven workers per source in parallel</tspan></text>
+<polyline points="245,150.0 272,150.0 272,145.0 305,145.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="245,240.0 272,240.0 272,145.0 305,145.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="245,330.0 272,330.0 272,145.0 305,145.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="245,420.0 272,420.0 272,145.0 305,145.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head1)"/>
+<polyline points="415.0,175 415.0,200" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="415.0,270 415.0,295" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="415.0,365 415.0,390" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="415.0,460 415.0,485" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="525,130 585,130" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="525,520.0 555,520.0 555,247.0 585,247.5" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="705.0,190 705.0,215" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="705.0,280 705.0,305" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="705.0,430 705.0,380" fill="none" stroke="#0c8599" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<polyline points="705.0,510 705.0,490" fill="none" stroke="#0c8599" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head0)"/>
+<text font-size="12" fill="#0c8599" text-anchor="start"><tspan x="714" y="411.4">joined at query time</tspan></text>
+<polyline points="825,330 848,330 848,145 885,145.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="1015.0,175 1015.0,200" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="1015.0,300 1015.0,325" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="1145,230 1175,230 1175,152 1205,152.5" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="1310.0,190 1310.0,215" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="825,365 858,365 858,680 1448,680 1448,305 1475,305.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<text font-size="12" fill="#495057" text-anchor="start"><tspan x="1300" y="673.4">serve</tspan></text>
+<polyline points="825,365 858,365 858,680 1448,680 1448,145 1475,145.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="825,365 858,365 858,680 1448,680 1448,225 1475,225.0" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#head1)"/>
+<polyline points="1415,170 1440,170 1440,390 1475,390.0" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#head1)"/>
+</svg>

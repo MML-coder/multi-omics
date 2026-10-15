@@ -121,6 +121,13 @@ generator and benchmarks; containerized local run.
 
 ## 7. Architecture and design
 
+The whole platform, from vendor files to analysis. Solid boxes are built in the prototype; dashed boxes are
+designed next.
+
+![Platform architecture](architecture/platform-architecture.svg)
+
+The prototype as built:
+
 ![Local prototype architecture](architecture/local-architecture.svg)
 
 ### 7.1 Flow
